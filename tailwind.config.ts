@@ -8,6 +8,19 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        "menu-slide": {
+          "0%": {
+            transform: "translateY(-150%)",
+          },
+          "100%": {
+            transform: "translateY(0)",
+          },
+        }
+      },
+      animation:{
+        "menu-slide": "menu-slide 0.3s ease-in-out",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

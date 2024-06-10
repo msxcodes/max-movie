@@ -1,7 +1,14 @@
 import React from "react";
 
-function ContentWrapper({ children }: { children: React.ReactElement }) {
-  return <div className="max-w-7xl mx-auto px-5">{children}</div>;
+interface ContentWrapperProps {
+  children: React.ReactElement;
+  className?: string;
+}
+
+function ContentWrapper({ children, className }: ContentWrapperProps) {
+  return (
+    <div className={`max-w-7xl mx-auto px-5 ${className}`}>{children}</div>
+  );
 }
 
 export default ContentWrapper;

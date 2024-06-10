@@ -5,7 +5,7 @@ import StoreProvider from "./StoreProvider";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "MaxMovie - Find your movies",
@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className="">
         <Header />
         <StoreProvider>{children}</StoreProvider>
         <Footer />
