@@ -22,7 +22,7 @@ export default function SerachBar({ hideBtn }: { hideBtn?: boolean }) {
       {hideBtn || (
         <button
           onClick={inputHandler}
-          className="w-[100px] cursor-pointer border-none outline-none bg-gradient-to-r from-[#f89e00] to-[#da2f68] h-full rounded-r-3xl "
+          className="w-[100px] cursor-pointer border-none outline-none bg-gradient-to-r from-blue-600 to-purple-400 h-full rounded-r-3xl "
         >
           Search
         </button>

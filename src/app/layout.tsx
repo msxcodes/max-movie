@@ -4,6 +4,7 @@ import "./globals.css";
 import StoreProvider from "./StoreProvider";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
+import { NextUIProvider } from "@nextui-org/react";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +25,10 @@ export default function RootLayout({
     <html lang="en">
       <body className="">
         <Header />
-        <StoreProvider>{children}</StoreProvider>
+
+        <StoreProvider>
+          <NextUIProvider>{children}</NextUIProvider>
+        </StoreProvider>
         <Footer />
       </body>
     </html>

@@ -11,7 +11,7 @@ export const homeSlice = createSlice({
             state.url= action.payload
         },
         getCategory: (state , action) => {
-            state.url= action.payload
+            state.category= action.payload
 
         },
     },
