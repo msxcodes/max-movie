@@ -1,3 +1,5 @@
+"use client";
+import useFetch from "@/hooks/useFetch";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
@@ -9,6 +11,8 @@ export default function SerachBar({ hideBtn }: { hideBtn?: boolean }) {
       route.push(`search/${searchQuery}`);
     }
   };
+
+  const { data, loading } = useFetch(`/search/movie?query=IF`);
 
   return (
     <>

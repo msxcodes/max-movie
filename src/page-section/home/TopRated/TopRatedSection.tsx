@@ -4,11 +4,11 @@ import SwitchTab from "@/components/common/SwitchTab";
 import useFetch from "@/hooks/useFetch";
 import React, { useState } from "react";
 
-export default function PopularSection() {
+export default function TopRatedSection() {
   const tabItem = ["Movies", "TV Shows"];
   const [endPoint, setEndPoint] = useState<string>("movie");
 
-  const { data, loading } = useFetch(`/${endPoint}/popular`);
+  const { data, loading } = useFetch(`/${endPoint}/top_rated`);
 
   const onTabChange = (value: string) => {
     setEndPoint(value === "Movies" ? "movie" : "tv");
@@ -19,12 +19,12 @@ export default function PopularSection() {
       <ContentWrapper className="flex justify-between items-center">
         <>
           <h2 className="text-white text-lg md:text-2xl font-medium">
-            What's Popular
+            Top Rated
           </h2>
           <SwitchTab item={tabItem} onTabChange={onTabChange} />
         </>
       </ContentWrapper>
-      <Carsoul data={data?.results} loading={loading} />
+      <Carsoul data={data?.results} loading={loading} endPoint={endPoint} />
     </div>
   );
 }

@@ -31,13 +31,13 @@ export default function HeroBanner() {
       <div className="w-full h-[250px] absolute bottom-0 left-0 bg-gradient-to-b from-[rgba(4,21,45,0)] to-[#04152d]"></div>
       <ContentWrapper>
         <div className="max-w-[800px] gap-2 flex flex-col relative text-center text-white mx-auto items-center">
-          <h2 className="font-semibold text-5xl md:text-7xl">Welcome</h2>
+          <h2 className="font-extrabold text-5xl md:text-8xl">Welcome</h2>
           <p className="text-lg font-medium md:text-2xl mb-10">
             Millions of movies, TV shows and people discover.Explore Now
           </p>
-          <div className="w-full h-[40px]  md:h-[50px] flex items-center">
+          {/* <div className="w-full h-[40px]  md:h-[50px] flex items-center">
             <SerachBar />
-          </div>
+          </div> */}
         </div>
       </ContentWrapper>
     </div>

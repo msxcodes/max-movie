@@ -11,22 +11,18 @@ import TrendingSection from "./Trending/TrendingSection";
 import PopularSection from "./Popular/PopularSection";
 import TopRatedSection from "./TopRated/TopRatedSection";
 import { IGenres } from "@/interface/Interface";
+import { url } from "inspector";
 
 export default function HomePage() {
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    getApiConfig();
-    genresCall();
-  }, []);
 
   const getApiConfig = () => {
     fetchApiData("/configuration")
       .then((res) => {
         const url = {
-          backdrop: res.images.secure_base_url + "original",
-          poster: res.images.secure_base_url + "original",
-          profile: res.images.secure_base_url + "original",
+          backdrop: res?.images.secure_base_url + "original",
+          poster: res?.images.secure_base_url + "original",
+          profile: res?.images.secure_base_url + "original",
         };
         dispatch(getApiConfiguration(url));
       })
@@ -44,13 +40,17 @@ export default function HomePage() {
 
     const data = await Promise.all(promises);
     data.map(({ genres }: { genres: IGenres[] }) => {
-      return genres.map((item) => {
+      return genres?.map((item) => {
         return (allGenres[item.id] = item);
       });
     });
 
     dispatch(getCategory(allGenres));
   };
+  useEffect(() => {
+    getApiConfig();
+    genresCall();
+  }, [getApiConfig, genresCall]);
 
   return (
     <div className="">

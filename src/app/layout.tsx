@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "MaxMovie - Find your movies",
   description: "find your favorite movies",
   icons: {
-    icon: "movixlogo.png",
+    icon: "media.png",
   },
 };
 
@@ -25,7 +25,6 @@ export default function RootLayout({
     <html lang="en">
       <body className="">
         <Header />
-
         <StoreProvider>
           <NextUIProvider>{children}</NextUIProvider>
         </StoreProvider>
