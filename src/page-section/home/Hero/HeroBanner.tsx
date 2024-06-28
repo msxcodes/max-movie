@@ -19,7 +19,7 @@ export default function HeroBanner() {
   }, [data]);
 
   return (
-    <div className="w-full flex items-center h-[400px] md:h-[500px] relative bg-[#04152d]">
+    <div className="w-full flex items-center h-[400px] md:h-[500px] relative bg-[#04152d] ">
       {!loading && (
         <div className="size-full absolute left-0 top-0 overflow-hidden opacity-50">
           <LazyImage
@@ -35,9 +35,9 @@ export default function HeroBanner() {
           <p className="text-lg font-medium md:text-2xl mb-10">
             Millions of movies, TV shows and people discover.Explore Now
           </p>
-          {/* <div className="w-full h-[40px]  md:h-[50px] flex items-center">
+          <div className="w-full h-[40px]  md:h-[50px] flex items-center">
             <SerachBar />
-          </div> */}
+          </div>
         </div>
       </ContentWrapper>
     </div>

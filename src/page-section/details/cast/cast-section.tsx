@@ -25,7 +25,7 @@ export default function CastSection({ data, loading }: CastSectionProps) {
               return (
                 <div
                   key={item.id}
-                  className="flex flex-col w-[350px] items-center gap-4 "
+                  className="flex flex-col w-[450px] items-center gap-4 "
                 >
                   <div className="size-[125px] rounded-full overflow-hidden">
                     <LazyImage

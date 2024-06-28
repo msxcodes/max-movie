@@ -42,7 +42,7 @@ export default function DetailsBanner({
 
   const genre_ids = data?.genres?.map((data: any) => data.id);
   const posterUrl =
-    url.poster === undefined
+    url?.poster === undefined
       ? FallbackPoster.src
       : url.poster + data?.poster_path;
 
