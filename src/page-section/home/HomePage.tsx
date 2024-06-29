@@ -55,6 +55,7 @@ export default function HomePage() {
   return (
     <div className="">
       <HeroBanner />
+      <div className="h-12"></div>
       <TrendingSection />
       <PopularSection />
       <TopRatedSection />

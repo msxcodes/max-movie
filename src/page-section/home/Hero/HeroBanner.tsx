@@ -35,9 +35,9 @@ export default function HeroBanner() {
           <p className="text-lg font-medium md:text-2xl mb-10">
             Millions of movies, TV shows and people discover.Explore Now
           </p>
-          <div className="w-full h-[40px]  md:h-[50px] flex items-center">
+          {/* <div className="w-full h-[40px]  md:h-[50px] flex items-center">
             <SerachBar />
-          </div>
+          </div> */}
         </div>
       </ContentWrapper>
     </div>

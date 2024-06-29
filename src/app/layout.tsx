@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import StoreProvider from "./StoreProvider";
 import Header from "@/components/header/Header";
@@ -23,12 +22,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="">
-        <Header />
+      <body>
         <StoreProvider>
-          <NextUIProvider>{children}</NextUIProvider>
+          <NextUIProvider>
+            <Header />
+            {children}
+            <Footer />
+          </NextUIProvider>
         </StoreProvider>
-        <Footer />
       </body>
     </html>
   );

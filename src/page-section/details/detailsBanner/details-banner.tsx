@@ -58,12 +58,12 @@ export default function DetailsBanner({
         <>
           {!!data && (
             <React.Fragment>
-              <div className="size-full absolute top-0 left-0 opacity-10 overflow-hidden">
+              {/* <div className="size-full absolute top-0 left-0 opacity-10 overflow-hidden">
                 <LazyImage
                   src={posterUrl}
                   className="size-full object-cover object-center"
                 />
-              </div>
+              </div> */}
               <div className="absolute top-0 left-0 size-full bg-gradient-to-b from-[rgba(4,21,45,0)] to-[#04152d]"></div>
               <ContentWrapper>
                 <div className="flex relative flex-col gap-[25px] md:gap-[50px] md:flex-row">
