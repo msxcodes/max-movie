@@ -6,7 +6,6 @@ import {
 } from "@/utils/store/slices/homeSlice";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import HeroBanner from "./Hero/HeroBanner";
 import TrendingSection from "./Trending/TrendingSection";
 import PopularSection from "./Popular/PopularSection";
 import TopRatedSection from "./TopRated/TopRatedSection";
