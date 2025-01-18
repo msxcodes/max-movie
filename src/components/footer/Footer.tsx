@@ -1,11 +1,12 @@
 import React from "react";
 import {
-  FaFacebookF,
+  FaGithub,
   FaInstagram,
   FaLinkedin,
   FaTwitter,
 } from "react-icons/fa";
 import ContentWrapper from "../common/ContentWrapper";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -31,18 +32,26 @@ export default function Footer() {
             pariatur.
           </div>
           <div className="flex gap-4 justify-center items-center">
-            <span className="p-4 rounded-full hover:text-[var(--pink)] bg-[#04152d] cursor-pointer transition-all duration-300 customBorder">
-              <FaFacebookF />
-            </span>
-            <span className="p-4 rounded-full hover:text-[var(--pink)] bg-[#04152d] cursor-pointer transition-all duration-300 customBorder">
-              <FaInstagram />
-            </span>
-            <span className="p-4 rounded-full hover:text-[var(--pink)] bg-[#04152d] cursor-pointer transition-all duration-300 customBorder">
-              <FaTwitter />
-            </span>
-            <span className="p-4 rounded-full hover:text-[var(--pink)] bg-[#04152d] cursor-pointer transition-all duration-300 customBorder">
-              <FaLinkedin />
-            </span>
+            <Link href={"https://github.com/msxcodes"} target="_blank" className="inline-flex">
+              <span className="p-2 md:p-4 rounded-full hover:text-[var(--pink)] bg-[#04152d] cursor-pointer transition-all duration-300 customBorder">
+                <FaGithub size={16} className="md:w-5 md:h-5" />
+              </span>
+            </Link>
+            <Link href="https://instagram.com/msxcodes" target="_blank" className="inline-flex">
+              <span className="p-2 md:p-4 rounded-full hover:text-[var(--pink)] bg-[#04152d] cursor-pointer transition-all duration-300 customBorder">
+                <FaInstagram size={16} className="md:w-5 md:h-5" />
+              </span>
+            </Link>
+            <Link href="https://twitter.com/msxcodes" target="_blank" className="inline-flex">
+              <span className="p-2 md:p-4 rounded-full hover:text-[var(--pink)] bg-[#04152d] cursor-pointer transition-all duration-300 customBorder">
+                <FaTwitter size={16} className="md:w-5 md:h-5" />
+              </span>
+            </Link>
+            <Link href="https://linkedin.com/in/msxcodes" target="_blank" className="inline-flex">
+              <span className="p-2 md:p-4 rounded-full hover:text-[var(--pink)] bg-[#04152d] cursor-pointer transition-all duration-300 customBorder">
+                <FaLinkedin size={16} className="md:w-5 md:h-5" />
+              </span>
+            </Link>
           </div>
         </>
       </ContentWrapper>

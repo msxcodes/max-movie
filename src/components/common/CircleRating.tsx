@@ -18,9 +18,8 @@ export default function CircleRating({
       styles={buildStyles({
         textColor: `${className ? "white" : "black"}`,
         textSize: "30px",
-        pathColor: `${
-          rating >= 7 ? "green" : rating < 7 && rating > 4 ? "orange" : "red"
-        }`,
+        pathColor: `${rating >= 7 ? "green" : rating < 7 && rating > 4 ? "orange" : "red"
+          }`,
         trailColor: `${!className ? "white" : "black"}`,
         backgroundColor: "white",
       })}

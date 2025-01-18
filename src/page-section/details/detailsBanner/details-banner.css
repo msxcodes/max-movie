@@ -1,0 +1,52 @@
+.container {
+    padding-top: 100px;
+    margin-bottom: 50px;
+}
+
+.poster-img {
+    max-width: 400px;
+}
+
+.title {
+    font-size: 36px;
+}
+
+.tagline {
+    font-size: 20px;
+    margin: 16px 0px;
+    font-style: italic;
+}
+
+.content-box {
+    gap: 30px;
+}
+
+.genres {
+    gap: 4px;
+}
+
+.rating-box {
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.rating-box div {
+    width: 90px;
+    height: 90px;
+    font-weight: 600;
+    padding: 2px;
+}
+
+.title-text {
+    font-size: 18px;
+    font-weight: 600;
+    width: max-content;
+}
+
+.modal-box {
+    padding-bottom: 24px;
+}
+
+.modal-container {
+    z-index: 50;
+}

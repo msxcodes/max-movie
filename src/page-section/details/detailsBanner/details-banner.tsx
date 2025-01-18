@@ -14,6 +14,7 @@ import { BsPlayCircle } from "react-icons/bs";
 import dayjs from "dayjs";
 import ReactPlayer from "react-player";
 import TrailerModal from "./components/trailer-modal";
+import "./details-banner.css"
 
 interface DetailsBannerProps {
   videoData: any;
@@ -28,7 +29,7 @@ export default function DetailsBanner({
   const { data, loading } = useFetch(`/${params?.mediatype}/${params?.id}`);
   const { url } = useSelector((state: any) => state.home);
 
-  const videoKey = videoData?.results?.[0].key;
+  const videoKey = videoData?.results?.[0]?.key;
 
   const videoUrl = `https://www.youtube.com/watch?v=${videoKey}`;
   console.log(videoUrl);
@@ -53,37 +54,30 @@ export default function DetailsBanner({
   };
 
   return (
-    <div className="w-full bg-[var(--black)] pt-[100px] mb-[50px]">
+    <div className="w-full container bg-[var(--black)] pt-[100px] mb-[50px]">
       {!loading ? (
         <>
           {!!data && (
             <React.Fragment>
-              {/* <div className="size-full absolute top-0 left-0 opacity-10 overflow-hidden">
-                <LazyImage
-                  src={posterUrl}
-                  className="size-full object-cover object-center"
-                />
-              </div> */}
-              <div className="absolute top-0 left-0 size-full bg-gradient-to-b from-[rgba(4,21,45,0)] to-[#04152d]"></div>
               <ContentWrapper>
-                <div className="flex relative flex-col gap-[25px] md:gap-[50px] md:flex-row">
-                  <div className=" w-full block rounded-xl md:max-w-[350px] ">
+                <div className="content-box flex relative md:flex-row">
+                  <div className="poster-img w-full block rounded-xl">
                     <LazyImage
                       src={posterUrl}
                       className="max-w-[350px] h-full rounded-lg"
                     />
                   </div>
-                  <div className="text-white ">
-                    <div className="text-2xl md:text-4xl">{`${data.title
+                  <div className="text-white flex flex-col justify-end">
+                    <div className="text-2xl title">{`${data.title
                       } (${data.release_date?.slice(0, 4)})`}</div>
-                    <div className="text-sm mb-4 italic opacity-50 md:text-xl">
+                    <div className="text-sm mb-4 tagline italic opacity-50 md:text-xl">
                       {data.tagline}
                     </div>
-                    <div className="mb-4">
-                      <Genres className="gap-1" data={genre_ids} />
+                    <div style={{ marginBottom: "16px" }}>
+                      <Genres className="genres" data={genre_ids} />
                     </div>
-                    <div className="flex gap-6 mb-6 items-center">
-                      <div className="bg-[var(--black2)] font-semibold rounded-full size-[70px] md:size-[90px] p-0.5 ">
+                    <div className="rating-box flex items-center">
+                      <div className="bg-[var(--black2)] rounded-full">
                         <CircleRating
                           rating={data?.vote_average?.toFixed(1)}
                           className
@@ -91,19 +85,21 @@ export default function DetailsBanner({
                       </div>
                       <TrailerModal url={videoUrl} title={data?.title} />
                     </div>
-                    <div className="mb-6">
-                      <div className="text-2xl mb-2">Overview</div>
-                      <p className="leading-6 md:pr-[150px]">
+                    <div className="" style={{ marginBottom: "24px" }}>
+                      <div className="" style={{ fontSize: "24px", marginBottom: "8px", lineHeight: "32px" }}>Overview</div>
+                      <p className="" style={{ paddingRight: "150px", lineHeight: "24px", opacity: "0.7" }}>
                         {data?.overview}
                       </p>
                     </div>
-                    <div className="border-b border-[rgba(255,255,255,0.1)] py-4 flex ">
-                      <div className="mr-2 flex gap-1  flex-wrap">
-                        <span className="font-[600]">Status: </span>
+                    <div style={{ padding: "16px 0px" }} className="border-b border-[rgba(255,255,255,0.1)]  flex ">
+                      <div className="flex  flex-wrap" style={{ marginRight: "8px", gap: "4px" }}>
+                        <span style={{ fontWeight: "600" }} className="font-[600]">Status: </span>
                         <span className="opacity-50 "> {data?.status} </span>
                       </div>
-                      <div className="mr-2 flex gap-1  flex-wrap">
-                        <span className="font-[600]">Release Date: </span>
+                      <div className="mr-2 flex gap-1  flex-wrap"
+                        style={{ marginRight: "8px", gap: "4px" }}
+                      >
+                        <span style={{ fontWeight: "600" }} className="font-[600]">Release Date: </span>
                         <span className="opacity-50 ">
                           {" "}
                           {dayjs(data?.release_date).format(
@@ -111,8 +107,8 @@ export default function DetailsBanner({
                           )}{" "}
                         </span>
                       </div>
-                      <div className="mr-2 flex gap-1  flex-wrap">
-                        <span className="font-[600]">Runtime: </span>
+                      <div className="mr-2 flex gap-1  flex-wrap" style={{ marginRight: "8px", gap: "4px" }}>
+                        <span style={{ fontWeight: "600" }} className="font-[600]">Runtime: </span>
                         <span className="opacity-50 ">
                           {" "}
                           {toHoursAndMinutes(data?.runtime)}{" "}
@@ -123,8 +119,8 @@ export default function DetailsBanner({
                     {/* Director section  */}
                     {director?.length > 0 && (
                       <div className="border-b border-[rgba(255,255,255,0.1)] py-4 flex ">
-                        <div className="mr-2 flex gap-1  flex-wrap">
-                          <span className="font-[600]">Director: </span>{" "}
+                        <div className="mr-2 flex gap-1  flex-wrap" style={{ marginRight: "8px", gap: "4px" }}>
+                          <span style={{ fontWeight: "600" }} className="font-[600]">Director: </span>{" "}
                           <span className="opacity-50 ">
                             {" "}
                             {director.map((data: any, index: number) => {
@@ -143,8 +139,8 @@ export default function DetailsBanner({
                     {/* WRITER SECTION  */}
                     {writer?.length > 0 && (
                       <div className="border-b border-[rgba(255,255,255,0.1)] py-4 flex ">
-                        <div className="mr-2 flex gap-1  flex-wrap">
-                          <span className="font-[600]">Writer: </span>{" "}
+                        <div className="mr-2 flex gap-1  flex-wrap" style={{ marginRight: "8px", gap: "4px" }}>
+                          <span style={{ fontWeight: "600" }} className="font-[600]">Writer: </span>{" "}
                           <span className="opacity-50 ">
                             {" "}
                             {writer?.map((data: any, index: number) => {

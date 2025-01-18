@@ -14,6 +14,7 @@ import Genres from "./Genres";
 import { redirect, useRouter } from "next/navigation";
 import CarouselSkeleton from "./skeleton/CarouselSkeleton";
 import fallback from "../../../public/no-poster.png";
+import "./Carsoul.css"
 
 interface CarouselProps {
   data: ITrendingMovies[];
@@ -27,13 +28,11 @@ export default function Carsoul({ data, loading, endPoint }: CarouselProps) {
   console.log(url);
 
   return (
-    <div className="w-full ">
+    <div className="w-full " style={{ width: "100%" }}>
       <ContentWrapper className="relative">
         <>
-          <BsFillArrowLeftCircleFill className="text-[30px] absolute top-[44%] translate-y-[-50%] cursor-pointer opacity-50 z-10 hidden md:block hover:opacity-80 left-[30px] " />
-          <BsFillArrowRightCircleFill className=" text-[30px] absolute top-[44%] translate-y-[-50%] cursor-pointer opacity-50 z-10 hidden md:block right-[30px] hover:opacity-80" />
           {!loading ? (
-            <div className="flex overflow-hidden overflow-x-scrolli gap-4 w-full py-10">
+            <div className="flex overflow-hidden overflow-x-scroll gap-4 w-full py-10 scroll-box" style={{ padding: "40px 0px", gap: "16px", overflow: "hidden", overflowX: "scroll" }}>
               {data?.map((item) => {
                 const posterUrl =
                   item.poster_path && url.poster != undefined
@@ -46,6 +45,7 @@ export default function Carsoul({ data, loading, endPoint }: CarouselProps) {
                     onClick={() =>
                       router.push(`/${item.media_type || endPoint}/${item.id}`)
                     }
+                    style={{ width: "calc(18% - 16px)" }}
                     className="w-[125px] rounded-md md:w-[calc(18%-16px)] space-y-2 cursor-pointer flex-shrink-[0]"
                     key={item.id}
                   >

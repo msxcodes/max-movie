@@ -3,6 +3,7 @@ import LazyImage from "@/components/common/LazyImg";
 import React from "react";
 import { useSelector } from "react-redux";
 import avatar from "../../../../public/avatar.png";
+import "./cast-section.css"
 
 interface CastSectionProps {
   data: any;
@@ -25,9 +26,9 @@ export default function CastSection({ data, loading }: CastSectionProps) {
               return (
                 <div
                   key={item.id}
-                  className="flex flex-col w-[450px] items-center gap-4 "
+                  className="flex flex-col profile-box items-center gap-4 "
                 >
-                  <div className="size-[125px] rounded-full overflow-hidden">
+                  <div className="avatar-box rounded-full overflow-hidden">
                     <LazyImage
                       src={`${profileImg}`}
                       className="size-full object-cover"
