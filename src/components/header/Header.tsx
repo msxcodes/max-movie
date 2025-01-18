@@ -16,11 +16,10 @@ function Header() {
 
   return (
     <header
-      className={`w-full h-[60px] z-10 flex items-center fixed transition-all duration-300 ${
-        menuIcon
-          ? "bg-[var(--black3)]"
-          : "bg-[rgba(0,0,0,0.25)] backdrop-blur-sm"
-      }`}
+      className={`w-full h-[60px] z-10 flex items-center  fixed transition-all duration-300 ${menuIcon
+        ? "bg-[var(--black3)]"
+        : "bg-[rgba(0,0,0,0.25)] backdrop-blur-sm"
+        }`}
     >
       <ContentWrapper className="flex justify-between items-center w-full ">
         <>

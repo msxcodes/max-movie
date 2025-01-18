@@ -67,16 +67,15 @@ export default function DetailsBanner({
               <div className="absolute top-0 left-0 size-full bg-gradient-to-b from-[rgba(4,21,45,0)] to-[#04152d]"></div>
               <ContentWrapper>
                 <div className="flex relative flex-col gap-[25px] md:gap-[50px] md:flex-row">
-                  <div className="w-full block rounded-xl md:max-w-[350px] ">
+                  <div className=" w-full block rounded-xl md:max-w-[350px] ">
                     <LazyImage
                       src={posterUrl}
-                      className="size-full rounded-lg"
+                      className="max-w-[350px] h-full rounded-lg"
                     />
                   </div>
                   <div className="text-white ">
-                    <div className="text-2xl md:text-4xl">{`${
-                      data.title
-                    } (${data.release_date?.slice(0, 4)})`}</div>
+                    <div className="text-2xl md:text-4xl">{`${data.title
+                      } (${data.release_date?.slice(0, 4)})`}</div>
                     <div className="text-sm mb-4 italic opacity-50 md:text-xl">
                       {data.tagline}
                     </div>

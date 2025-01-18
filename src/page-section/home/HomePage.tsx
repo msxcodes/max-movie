@@ -12,6 +12,7 @@ import PopularSection from "./Popular/PopularSection";
 import TopRatedSection from "./TopRated/TopRatedSection";
 import { IGenres } from "@/interface/Interface";
 import { url } from "inspector";
+import HeroBannerSection from "./Hero/HeroBannerSection";
 
 export default function HomePage() {
   const dispatch = useDispatch();
@@ -54,7 +55,7 @@ export default function HomePage() {
 
   return (
     <div className="">
-      <HeroBanner />
+      <HeroBannerSection />
       <div className="h-12"></div>
       <TrendingSection />
       <PopularSection />
